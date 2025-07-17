@@ -1,0 +1,10 @@
+Step 1 ->creating a folder 
+Step 2 ->installing react app
+Step 3 ->installing tailwind and dependencies outside app. cmd:npm install -D tailwindcss postcss autoprefixer
+Step 4 ->Initialize Tailwind CSS inside app (because it will not work outside app). cmd npx tailwindcss init -p
+Step 5 ->Configure Tailwind CSS (tailwind.config.js) inside the app
+Step 6 ->Add Tailwind Directives to your CSS in src/index.css inside the app
+Step 7 ->before final i am checking the tailwind is working after working
+Step 8 ->next i am deleting the extra node module folders and package files outside app folder
+Step 9 ->bringing the app outside the folder 
+Step 10->atlast the app created and empty folder deleted
