@@ -1,6 +1,8 @@
 
 // import './App.css';
 import React, { useState } from 'react';
+ import { Navigate } from 'react-router-dom';
+import login from './login';
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -25,12 +27,14 @@ function Form() {
 
     if (Object.keys(newErrors).length === 0) {
       // Form submission logic here
+      
+      <Navigate to="login.js" />;
       console.log('Form submitted successfully!');
     } else {
       console.log('Form submission failed due to validation errors.');
     }
   };
-  
+
   const validateForm = (data) => {
     const errors = {};
 
@@ -58,11 +62,23 @@ function Form() {
         <label class="p-3 font-serif italic font-bold text-blue-500">
           Email <input name="email" type="email" value={formData.email} onChange={handleChange} class="mb-1 email border border-red-500 font-sans font-normal text-black ml-9" />
         </label>
+        <br></br>
+        {errors.email && (
+          <span className="error-message" class="text-red-600">
+            {errors.email}
+          </span>
+        )}
       </div>
       <div class="flex justify-center" className="form-group">
         <label class="p-3 font-serif italic font-bold text-blue-500">
           Username <input name="username" type="text" value={formData.username} onChange={handleChange} class="mb-1 username border border-red-500 font-sans font-normal text-black" />
         </label>
+        <br></br>
+        {errors.username && (
+          <span className="error-message" class="text-red-600">
+            {errors.username}
+          </span>
+        )}
       </div>
       <button type="submit" class="text-red-50 p-2 rounded-md borde-2 border-indigo-500 bg-indigo-500 hover:bg-green-600">Sign up</button>
     </form>
