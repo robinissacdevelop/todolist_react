@@ -1,14 +1,15 @@
 
 // import './App.css';
 import React, { useState } from 'react';
- import { Navigate } from 'react-router-dom';
-import login from './login';
+import { useNavigate } from 'react-router-dom';
+// import login from './login';
 
 function Form() {
   const [formData, setFormData] = useState({
     username: '',
     email: '',
   });
+  const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
 
@@ -27,9 +28,17 @@ function Form() {
 
     if (Object.keys(newErrors).length === 0) {
       // Form submission logic here
-      
-      <Navigate to="login.js" />;
-      console.log('Form submitted successfully!');
+
+    //  console.log(formData.username);
+      localStorage.setItem('username', formData.username);
+      // const todenail = localStorage.setItem('username', formData.email);
+      // if(toder !== "" && todenail !== ""){
+      navigate('/login');
+
+      // }
+      // console.log(formData.email);
+      // from here the details will be temporarly stored and transfered to login and after all details will be delivered to MongoDB
+      // console.log('Form submitted successfully!');
     } else {
       console.log('Form submission failed due to validation errors.');
     }
