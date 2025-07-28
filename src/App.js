@@ -4,7 +4,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom';
 import Form from './components/form';
-import Login from './components/login';
+import Setpass from './components/setpass';
 
 
 
@@ -23,7 +23,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Navigate to="/form" />} />
                 <Route path="/form" element={<Form />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/setpass" element={<Setpass />} />
               </Routes>
             </div>
           </div>

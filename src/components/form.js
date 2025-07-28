@@ -29,16 +29,11 @@ function Form() {
     if (Object.keys(newErrors).length === 0) {
       // Form submission logic here
 
-    //  console.log(formData.username);
       localStorage.setItem('username', formData.username);
-      // const todenail = localStorage.setItem('username', formData.email);
-      // if(toder !== "" && todenail !== ""){
-      navigate('/login');
+      localStorage.setItem('mail', formData.email);
 
-      // }
-      // console.log(formData.email);
-      // from here the details will be temporarly stored and transfered to login and after all details will be delivered to MongoDB
-      // console.log('Form submitted successfully!');
+      navigate('/setpass');
+
     } else {
       console.log('Form submission failed due to validation errors.');
     }
