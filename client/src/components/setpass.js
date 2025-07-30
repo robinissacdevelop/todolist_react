@@ -94,6 +94,7 @@ const Setpass = () => {
         //every parameter reached
         //from here data is taken to database
         errors.matching = "Created successfully";
+        
       }
     }
 
